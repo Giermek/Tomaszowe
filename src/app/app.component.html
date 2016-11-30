@@ -1,3 +1,16 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+<div class="row">
+  <div class="col-md-2">
+    <ul class="nav nav-pills nav-stacked">
+      <li><a routerLink="/strona-domowa" routerLinkActive="active">Domowa</a></li>
+      <li><a routerLink="/strona-pokojowa" routerLinkActive="active">Pokojowa</a></li>
+      <li><a routerLink="/strona-lazienkowa" routerLinkActive="active">Łazienkowa</a></li>
+    </ul>
+  </div>
+
+  <div class="col-md-10">
+  <router-outlet></router-outlet>
+  </div>
+  
+</div>
+</div>
