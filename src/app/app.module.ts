@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import {PlansService} from './plans.service';
 
 import { AppComponent } from './app.component';
 import {AppRoutingModule} from './app-routing.module';
@@ -26,7 +27,9 @@ import { LazienkowaComponent } from './lazienkowa/lazienkowa.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    PlansService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
