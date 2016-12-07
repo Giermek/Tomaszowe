@@ -29,3 +29,11 @@ ng serve
   ng build
   
   (Tego ostatniego nie kumam, ale inaczej bootstrap za cholerę nie chciał działać)
+  
+  ----------------
+  
+  Żeby odpalić tabelę z podziałem na strony zainstalowałem bibliotekę ng2-pagination(http://michaelbromley.github.io/ng2-pagination/#/):
+  
+npm install ng2-pagination --save
+
+--------------------
