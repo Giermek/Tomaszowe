@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {Ng2PaginationModule} from 'ng2-pagination';
 
 import {PlansService} from './plans.service';
 
@@ -25,7 +26,8 @@ import { LazienkowaComponent } from './lazienkowa/lazienkowa.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Ng2PaginationModule
   ],
   providers: [
     PlansService

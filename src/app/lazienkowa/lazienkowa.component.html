@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <table class="table table-striped">
   <thead>
     <tr>
@@ -8,8 +9,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let plan of plans">
+    <tr *ngFor="let plan of plans | paginate: {itemsPerPage:plansService.countPerPage, currentPage:p}">
       <td>{{plan.id}}</td>
+      <td>{{plan.name}}</td>
+      <td>{{plan.creationDate | date:'medium'}}</td>
+      <td>{{plan.status}}</td>
     </tr>
   </tbody>
 </table>
+</div>
+<pagination-controls (pageChange)="p=$event" autoHide="true"></pagination-controls>

@@ -11,9 +11,11 @@ import {PlansService} from '../plans.service';
 export class LazienkowaComponent implements OnInit {
 
   plans: Plan[];
+  p:number;
 
-  constructor(plansService: PlansService) {
-    this.plans=plansService.getPlans();
+  constructor(private plansService: PlansService) {
+    this.plans=plansService.getPlansByPages(2,7);
+    this.p=plansService.pageNumber;
    }
 
   ngOnInit() {
