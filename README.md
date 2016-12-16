@@ -6,7 +6,7 @@ ng new nazwa_aplikacji
 
 (Odpalanie:
 
-cd nazwa_aplikacji
+W katalogu aplikacji:
 
 ng serve
 )
