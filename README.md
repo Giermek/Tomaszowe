@@ -30,9 +30,19 @@ ng serve
   
   (Tego ostatniego nie kumam, ale inaczej bootstrap za cholerę nie chciał działać)
   
+  ---------------
+  
+  Tworzenie komponentów:
+  
+  ng g component nazwa_komponentu
+  
+  Czyli w moim przypadku, np. ng g component domowa
+  
   ----------------
   
-  Żeby odpalić tabelę z podziałem na strony zainstalowałem bibliotekę ng2-pagination(http://michaelbromley.github.io/ng2-pagination/#/):
+  Żeby odpalić tabelę z podziałem na strony zainstalowałem bibliotekę ng2-pagination(http://michaelbromley.github.io/ng2-pagination/#/).
+  
+W katalogu aplikacji:
   
 npm install ng2-pagination --save
 
