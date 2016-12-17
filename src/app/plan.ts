@@ -1,4 +1,4 @@
-export default class Plan {
+export class Plan {
     id: number;
     name: string;
     creationDate: string;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {default as Plan} from '../plan';
+import {Plan} from '../plan';
 import {PlansService} from '../plans.service';
 
 @Component({
