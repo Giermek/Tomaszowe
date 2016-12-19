@@ -9,7 +9,7 @@ export class PlansService{
     countPerPage:number;
     pageNumber:number;
 
-    getPlans(){
+    getPlans():Plan[]{
         return PLANS;
     }
 

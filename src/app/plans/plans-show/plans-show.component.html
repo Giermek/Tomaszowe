@@ -1,0 +1,27 @@
+<div class="container-fluid">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nazwa</th>
+      
+      <th>Stworzono</th>
+      <th>Status</th>
+      <th>id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let plan of plans | paginate: {itemsPerPage:plansService.countPerPage, currentPage:p}">
+      <td>{{plan.name}}</td>
+      <td>{{plan.creationDate | date:'medium'}}</td>
+      <td>{{plan.status}}</td>
+      <td><span style="padding-right:30px">{{plan.id}}</span><button (click)="showDetails(plan.id)">Pokaz</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="container-fluid" align="center">
+  <pagination-controls (pageChange)="p=$event" autoHide="true"></pagination-controls>
+</div>
+<div class="container-fluid">
+<router-outlet></router-outlet>
+</div>

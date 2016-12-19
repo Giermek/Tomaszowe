@@ -9,9 +9,13 @@ import {PlansService} from './plans.service';
 import { AppComponent } from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 
+import {PlansRoutingModule} from './plans/plans-routing.module';
+
 import { DomowaComponent } from './domowa/domowa.component';
 import { PokojowaComponent } from './pokojowa/pokojowa.component';
-import { LazienkowaComponent } from './lazienkowa/lazienkowa.component';
+import { PlansShowComponent } from './plans/plans-show/plans-show.component';
+import { PlanDetailComponent } from './plans/plan-detail/plan-detail.component';
+import { PlansComponent } from './plans/plans.component';
 
 
 
@@ -20,13 +24,16 @@ import { LazienkowaComponent } from './lazienkowa/lazienkowa.component';
     AppComponent,
     DomowaComponent,
     PokojowaComponent,
-    LazienkowaComponent
+    PlansShowComponent,
+    PlanDetailComponent,
+    PlansComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    PlansRoutingModule,
     Ng2PaginationModule
   ],
   providers: [
