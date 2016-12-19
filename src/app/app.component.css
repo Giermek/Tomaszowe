@@ -1,0 +1,8 @@
+ul a:hover {
+  
+  background-color: #CFD8DC;
+}
+ul a.active {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
