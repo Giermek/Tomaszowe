@@ -10,17 +10,17 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let plan of plans | paginate: {itemsPerPage:plansService.countPerPage, currentPage:p}">
+    <tr *ngFor="let plan of plans | paginate: {itemsPerPage:countPerPage, currentPage:pageNumber}">
       <td>{{plan.name}}</td>
       <td>{{plan.creationDate | date:'medium'}}</td>
       <td>{{plan.status}}</td>
-      <td><span style="padding-right:30px">{{plan.id}}</span><button (click)="showDetails(plan.id)">Pokaz</button></td>
+      <td><span style="padding-right:30px">{{plan.id}}</span><button (click)="showDetails(plan)">Pokaz</button></td>
     </tr>
   </tbody>
 </table>
 </div>
 <div class="container-fluid" align="center">
-  <pagination-controls (pageChange)="p=$event" autoHide="true"></pagination-controls>
+  <pagination-controls (pageChange)="pageNumber=$event" autoHide="true"></pagination-controls>
 </div>
 <div class="container-fluid">
 <router-outlet></router-outlet>
