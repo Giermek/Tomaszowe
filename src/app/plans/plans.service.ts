@@ -9,7 +9,7 @@ import {Observable} from 'rxjs/Observable';
 export class PlansService{
 
 
-    getPlansByPages(pageNumber, countPerPage){
+    getPlansByPages(pageNumber, countPerPage): Observable<Plan[]>{
         let plans = new Observable<Plan[]>(observer => observer.next(PLANS));
         
         return plans;
