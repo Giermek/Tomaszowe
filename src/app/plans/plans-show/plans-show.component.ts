@@ -5,6 +5,8 @@ import {Router, ActivatedRoute} from '@angular/router';
 import {Plan} from '../plan';
 import {PlansService} from '../plans.service';
 
+import {Observable} from 'rxjs/Observable';
+
 @Component({
   selector: 'app-lazienkowa',
   templateUrl: './plans-show.component.html',
@@ -25,7 +27,8 @@ export class PlansShowComponent implements OnInit {
    }
 
   ngOnInit():void {
-    this.plans=this.plansService.getPlansByPages(this.pageNumber,this.countPerPage);
+    this.plansService.getPlansByPages(this.pageNumber,this.countPerPage)
+    .subscribe(value => this.plans=value);
     
     
   }

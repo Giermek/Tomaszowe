@@ -1,4 +1,4 @@
-import {Plan} from './plan';
+import {Plan} from './plans/plan';
 
 export const PLANS: Plan[] = 
 [
