@@ -37,3 +37,11 @@ ng serve
 npm install ng2-pagination --save
 
 --------------------
+
+  Uruchomienie "fake-server" - json.server (https://github.com/typicode/json-server)
+  
+  $ npm install -g json-server
+  
+  Następnie w katalogu, gdzie jest plik .json z danymi (obecnie w src) odpalić json-server:
+  
+  $ json-server --watch plans.json
