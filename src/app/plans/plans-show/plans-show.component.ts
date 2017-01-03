@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Plan} from '../../plan';
-import {PlansService} from '../../plans.service';
+import {Router, ActivatedRoute} from '@angular/router';
+
+import {Plan} from '../plan';
+import {PlansService} from '../plans.service';
+
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-lazienkowa',
@@ -10,20 +14,37 @@ import {PlansService} from '../../plans.service';
 })
 export class PlansShowComponent implements OnInit {
 
+  totalCount;
   plans: Plan[];
-  p:number;
+  defaultPageNumber:number=1;
+  pageNumber:number=this.defaultPageNumber;
+  countPerPage:number=5;
+  selectedPlanId: number;
   
-  constructor(private plansService: PlansService) {
-    this.plans=plansService.getPlansByPages(1,7);
-    this.p=this.plansService.pageNumber;
+  constructor(private plansService: PlansService,
+              private route: ActivatedRoute,
+              private router: Router) {
+    
 
    }
 
-  ngOnInit() {
-    
-    
+  ngOnInit():void {
+    this.plansService.getPlansByPages(this.pageNumber,this.countPerPage)
+    .subscribe(res => {
+      
+      let headers=res.headers;
+      this.totalCount = headers.get('X-Total-Count');
+      let pl = res.json();
+      this.plans=pl;
+      
+    });
   }
-showDetails(x):any{
-  
+
+  onEnter(value: number) { this.pageNumber = value; }
+
+  showDetails(x:Plan):any{
+  this.selectedPlanId=x.id;
+  this.router.navigate(['pokaz'], {relativeTo:this.route});
 }
 }
+

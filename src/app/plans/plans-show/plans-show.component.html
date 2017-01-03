@@ -1,3 +1,8 @@
+
+<div class="container-fluid">
+{{totalCount}}
+</div>
+
 <div class="container-fluid">
 <table class="table table-striped">
   <thead>
@@ -10,18 +15,17 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let plan of plans | paginate: {itemsPerPage:plansService.countPerPage, currentPage:p}">
+    <tr *ngFor="let plan of plans">
       <td>{{plan.name}}</td>
       <td>{{plan.creationDate | date:'medium'}}</td>
       <td>{{plan.status}}</td>
-      <td><span style="padding-right:30px">{{plan.id}}</span><button (click)="showDetails(plan.id)">Pokaz</button></td>
+      <td><span style="padding-right:30px">{{plan.id}}</span><button (click)="showDetails(plan)">Pokaz</button></td>
     </tr>
   </tbody>
 </table>
 </div>
-<div class="container-fluid" align="center">
-  <pagination-controls (pageChange)="p=$event" autoHide="true"></pagination-controls>
-</div>
+<input #box (keyup.enter)="onEnter(box.value)">
+    <p>{{pageNumber}}</p>
 <div class="container-fluid">
 <router-outlet></router-outlet>
 </div>
