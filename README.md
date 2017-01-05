@@ -32,11 +32,6 @@ ng serve
   
   ----------------
   
-  Żeby odpalić tabelę z podziałem na strony zainstalowałem bibliotekę ng2-pagination(http://michaelbromley.github.io/ng2-pagination/#/):
-  
-npm install ng2-pagination --save
-
---------------------
 
   Uruchomienie "fake-server" - json.server (https://github.com/typicode/json-server)
   
