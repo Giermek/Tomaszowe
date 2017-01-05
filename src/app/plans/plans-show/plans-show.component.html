@@ -1,8 +1,4 @@
-
-<div class="container-fluid">
-{{totalCount}}
-</div>
-
+<hr>
 <div class="container-fluid">
 <table class="table table-striped">
   <thead>
@@ -24,8 +20,20 @@
   </tbody>
 </table>
 </div>
-<input #box (keyup.enter)="onEnter(box.value)">
-    <p>{{pageNumber}}</p>
+<div class="row">
+  <div class="col-lg-6"  style="margin-top: 10px;">
+    <pagination [totalItems]="totalCount"
+                [(ngModel)]="currentPage" 
+                [maxSize]="maxSize" class="pagination-sm"
+                [itemsPerPage]="countPerPage"
+                [boundaryLinks]="true"
+                (numPages)="numPages = $event"
+                (pageChanged)="pageChanged($event)">
+    </pagination>
+    
+  </div>
+</div>
+
 <div class="container-fluid">
 <router-outlet></router-outlet>
 </div>

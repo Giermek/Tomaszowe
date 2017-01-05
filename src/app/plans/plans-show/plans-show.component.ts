@@ -14,33 +14,44 @@ import {Observable} from 'rxjs/Observable';
 })
 export class PlansShowComponent implements OnInit {
 
-  totalCount;
+  totalCount:number;
   plans: Plan[];
-  defaultPageNumber:number=1;
-  pageNumber:number=this.defaultPageNumber;
-  countPerPage:number=5;
+  pageNumber:number=3;
+  countPerPage:number=7;
   selectedPlanId: number;
+  maxSize:number = 5;
+  currentPage=1;
   
   constructor(private plansService: PlansService,
               private route: ActivatedRoute,
               private router: Router) {
-    
-
-   }
+              
+              }
 
   ngOnInit():void {
+    
     this.plansService.getPlansByPages(this.pageNumber,this.countPerPage)
     .subscribe(res => {
-      
-      let headers=res.headers;
-      this.totalCount = headers.get('X-Total-Count');
-      let pl = res.json();
-      this.plans=pl;
-      
+      this.totalCount=Number(res.headers.get('X-Total-Count'));
+      this.plans=res.json();
+    });
+    
+ }
+
+  
+  pageChanged(event:any):void {
+    this.pageNumber=event.page;
+    this.plansService.getPlansByPages(this.pageNumber,this.countPerPage)
+    .subscribe(res => {
+      this.totalCount=Number(res.headers.get('X-Total-Count'));
+      this.plans=res.json();
     });
   }
 
-  onEnter(value: number) { this.pageNumber = value; }
+  setPage(pageNo:number):number {
+    this.pageNumber = pageNo;
+    return this.pageNumber;
+  }
 
   showDetails(x:Plan):any{
   this.selectedPlanId=x.id;

@@ -7,7 +7,6 @@ import { HttpModule } from '@angular/http';
 import {AppRoutingModule} from './app-routing.module';
 import {PlansModule} from './plans/plans.module';
 
-
 import { AppComponent } from './app.component';
 import { DomowaComponent } from './domowa/domowa.component';
 import { PokojowaComponent } from './pokojowa/pokojowa.component';
