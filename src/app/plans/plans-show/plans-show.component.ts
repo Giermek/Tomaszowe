@@ -10,17 +10,19 @@ import {Observable} from 'rxjs/Observable';
 @Component({
   selector: 'app-lazienkowa',
   templateUrl: './plans-show.component.html',
-  styleUrls: ['./plans-show.component.css']
+  styleUrls: ['./plans-show.component.css'],
+  
 })
 export class PlansShowComponent implements OnInit {
 
   totalCount:number;
   plans: Plan[];
-  pageNumber:number=3;
-  countPerPage:number=7;
+  pageNumber:number=2;
+  
   selectedPlanId: number;
-  maxSize:number = 5;
-  currentPage=1;
+  maxSize:number = 7;
+  values: number[]=[5,10,15,20];
+  countPerPage:number=this.values[0];
   
   constructor(private plansService: PlansService,
               private route: ActivatedRoute,
@@ -40,7 +42,7 @@ export class PlansShowComponent implements OnInit {
 
   
   pageChanged(event:any):void {
-    this.pageNumber=event.page;
+    this.pageNumber=event;
     this.plansService.getPlansByPages(this.pageNumber,this.countPerPage)
     .subscribe(res => {
       this.totalCount=Number(res.headers.get('X-Total-Count'));
@@ -48,9 +50,13 @@ export class PlansShowComponent implements OnInit {
     });
   }
 
-  setPage(pageNo:number):number {
-    this.pageNumber = pageNo;
-    return this.pageNumber;
+  onChange(event:any){
+    this.countPerPage=event;
+     this.plansService.getPlansByPages(this.pageNumber,this.countPerPage)
+    .subscribe(res => {
+      this.totalCount=Number(res.headers.get('X-Total-Count'));
+      this.plans=res.json();
+    });
   }
 
   showDetails(x:Plan):any{

@@ -2,7 +2,7 @@ import { NgModule }       from '@angular/core';
 import { CommonModule }   from '@angular/common';
 import {FormsModule} from '@angular/forms';
 
-import { PaginationModule } from 'ng2-bootstrap/components/pagination';
+import {Ng2PaginationModule} from 'ng2-pagination';
 
 import {PlansService} from './plans.service';
 
@@ -22,7 +22,7 @@ import { PlansComponent } from './plans.component';
         CommonModule,
         FormsModule,
         PlansRoutingModule,
-        PaginationModule        
+        Ng2PaginationModule       
     ],
     providers:[
         PlansService

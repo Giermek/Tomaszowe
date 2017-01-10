@@ -1,4 +1,14 @@
 <hr>
+
+<div class="container-fluid" align="right">
+Ilość elementów na stronie:
+<select [ngModel]="countPerPage" (ngModelChange)="onChange($event)">
+  <option *ngFor="let i of values" [value]="i" >{{i}}</option>
+</select>
+</div>
+
+<br>
+
 <div class="container-fluid">
 <table class="table table-striped">
   <thead>
@@ -11,7 +21,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let plan of plans">
+    <tr *ngFor="let plan of plans | paginate: { itemsPerPage: countPerPage, currentPage: pageNumber, totalItems: totalCount }">
       <td>{{plan.name}}</td>
       <td>{{plan.creationDate | date:'medium'}}</td>
       <td>{{plan.status}}</td>
@@ -20,19 +30,9 @@
   </tbody>
 </table>
 </div>
-<div class="row">
-  <div class="col-lg-6"  style="margin-top: 10px;">
-    <pagination [totalItems]="totalCount"
-                [(ngModel)]="currentPage" 
-                [maxSize]="maxSize" class="pagination-sm"
-                [itemsPerPage]="countPerPage"
-                [boundaryLinks]="true"
-                (numPages)="numPages = $event"
-                (pageChanged)="pageChanged($event)">
-    </pagination>
-    
-  </div>
-</div>
+
+<pagination-controls  (pageChange)="pageChanged($event)">
+</pagination-controls>
 
 <div class="container-fluid">
 <router-outlet></router-outlet>
