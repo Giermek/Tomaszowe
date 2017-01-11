@@ -1,21 +1,26 @@
 import {Injectable} from '@angular/core';
 
 import {Plan} from './plan';
-import {PLANS} from './mock-plans';
+
+import {Http, Response} from '@angular/http';
+
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class PlansService{
 
-    countPerPage:number;
-    pageNumber:number;
+    plansUrl = 'http://localhost:3000/PLANS';
+    
+    constructor(private http:Http){}
 
-    getPlans():Plan[]{
-        return PLANS;
+    getPlansByPages(pageNumber, countPerPage):Observable<Response>{
+        const start= ((pageNumber*countPerPage)-countPerPage);
+        const url = `${this.plansUrl}?_start=${start}&_limit=${countPerPage}`;
+        return this.http.get(url); 
     }
 
-    getPlansByPages(pageNumber, countPerPage):Plan[]{
-        this.countPerPage=countPerPage;
-        this.pageNumber=pageNumber;
-        return PLANS;
+    getPlan(id:number):Observable<Plan>{
+        const url = `${this.plansUrl}/${id}`;
+        return this.http.get(url).map(res => res.json());
     }
 }
