@@ -9,7 +9,7 @@ import { PlanDetailComponent } from './plan-detail/plan-detail.component';
 const plansRoutes: Routes = [
   { path: 'plany', component: PlansComponent, children:[
         {path:'', component: PlansShowComponent, children:[
-            {path:'pokaz', component: PlanDetailComponent},
+            {path:'planDetail/:id', component: PlanDetailComponent},
             {path:''}
   ] }]}
 

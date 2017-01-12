@@ -10,7 +10,7 @@ import {Observable} from 'rxjs/Observable';
 export class PlansService{
 
     plansUrl = 'http://localhost:3000/PLANS';
-
+    
     constructor(private http:Http){}
 
     getPlansByPages(pageNumber, countPerPage):Observable<Response>{
@@ -19,7 +19,8 @@ export class PlansService{
         return this.http.get(url); 
     }
 
-    getPlan(){
-
+    getPlan(id:number):Observable<Plan>{
+        const url = `${this.plansUrl}/${id}`;
+        return this.http.get(url).map(res => res.json());
     }
 }

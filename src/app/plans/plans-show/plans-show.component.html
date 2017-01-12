@@ -2,7 +2,7 @@
 
 <div class="container-fluid" align="right">
 Ilość elementów na stronie:
-<select [ngModel]="countPerPage" (ngModelChange)="onChange($event)">
+<select [ngModel]="countPerPage" (ngModelChange)="onSelect($event)">
   <option *ngFor="let i of values" [value]="i" >{{i}}</option>
 </select>
 </div>
@@ -25,7 +25,7 @@ Ilość elementów na stronie:
       <td>{{plan.name}}</td>
       <td>{{plan.creationDate | date:'medium'}}</td>
       <td>{{plan.status}}</td>
-      <td><span style="padding-right:30px">{{plan.id}}</span><button (click)="showDetails(plan)">Pokaz</button></td>
+      <td><span style="padding-right:30px">{{plan.id}}</span><button (click)="showDetails(plan)">Wyświetl</button></td>
     </tr>
   </tbody>
 </table>
