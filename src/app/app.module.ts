@@ -3,9 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import {PageNumberService} from './page-number.service';
-
-
 import {AppRoutingModule} from './app-routing.module';
 import {PlansModule} from './plans/plans.module';
 
@@ -28,7 +25,7 @@ import { PokojowaComponent } from './pokojowa/pokojowa.component';
     PlansModule
   ],
   providers: [
-    PageNumberService
+    
   ],
   bootstrap: [AppComponent]
 })
