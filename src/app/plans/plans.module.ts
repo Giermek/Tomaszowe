@@ -5,6 +5,7 @@ import {FormsModule} from '@angular/forms';
 import {Ng2PaginationModule} from 'ng2-pagination';
 
 import {PlansService} from './plans.service';
+import {PageNumberService} from './page-number.service';
 
 import {PlansRoutingModule} from './plans-routing.module';
 
@@ -22,10 +23,11 @@ import { PlansComponent } from './plans.component';
         CommonModule,
         FormsModule,
         PlansRoutingModule,
-        Ng2PaginationModule        
+        Ng2PaginationModule       
     ],
     providers:[
-        PlansService
+        PlansService,
+        PageNumberService
     ]
 })
 
