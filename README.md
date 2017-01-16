@@ -1,49 +1,31 @@
-# Tomaszowe
+# Pierwsza
 
-Wrzuciłem tylko katalog src. Reszta utoworzona w ten sposób:
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.18.
 
-ng new nazwa_aplikacji
+## Development server
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-(Odpalanie:
+## Code scaffolding
 
-W katalogu aplikacji:
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
 
-ng serve
-)
+## Build
 
-Żeby korzystać z bootstrapa zrobiłem tak:
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-  W katalogu mojej aplikacji:
+## Running unit tests
 
-  npm install ng2-bootstrap bootstrap --save
-  
-  Natomiast w pliku angular-cli.json dodałem ścieżkę do bootstrap.min.css:
-  
-  "styles": [
-        "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
-      ]
-      
-  Po czym w katalogu aplikacji:
-  
-  ng build
-  
-  (Tego ostatniego nie kumam, ale inaczej bootstrap za cholerę nie chciał działać)
-  
-  ---------------
-  
-  Tworzenie komponentów:
-  
-  ng g component nazwa_komponentu
-  
-  Czyli w moim przypadku, np. ng g component domowa
-  
-  ----------------
-  
-  Żeby odpalić tabelę z podziałem na strony zainstalowałem bibliotekę ng2-pagination(http://michaelbromley.github.io/ng2-pagination/#/).
-  
-W katalogu aplikacji:
-  
-npm install ng2-pagination --save
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
---------------------
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Before running the tests make sure you are serving the app via `ng serve`.
+
+## Deploying to Github Pages
+
+Run `ng github-pages:deploy` to deploy to Github Pages.
+
+## Further help
+
+To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
