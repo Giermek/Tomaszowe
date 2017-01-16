@@ -1,31 +1,35 @@
-# Pierwsza
+Tomaszowe
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.18.
+Wrzuciłem tylko katalog src. Reszta utoworzona w ten sposób:
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+ng new nazwa_aplikacji
 
-## Code scaffolding
+(Odpalanie:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+cd nazwa_aplikacji
 
-## Build
+ng serve )
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Żeby korzystać z bootstrapa zrobiłem tak:
 
-## Running unit tests
+W katalogu mojej aplikacji:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+npm install ng2-bootstrap bootstrap --save
 
-## Running end-to-end tests
+Natomiast w pliku angular-cli.json dodałem ścieżkę do bootstrap.min.css:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+"styles": [ "styles.css", "../node_modules/bootstrap/dist/css/bootstrap.min.css" ]
 
-## Deploying to Github Pages
+Po czym w katalogu aplikacji:
 
-Run `ng github-pages:deploy` to deploy to Github Pages.
+ng build
 
-## Further help
+(Tego ostatniego nie kumam, ale inaczej bootstrap za cholerę nie chciał działać)
 
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Uruchomienie "fake-server" - json.server (https://github.com/typicode/json-server)
+
+$ npm install -g json-server
+
+Następnie w katalogu, gdzie jest plik .json z danymi (obecnie w src) odpalić json-server:
+
+$ json-server --watch plans.json
