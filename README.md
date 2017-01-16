@@ -1,6 +1,8 @@
 Tomaszowe
 
-Wrzuciłem tylko katalog src. Reszta utoworzona w ten sposób:
+--------------------
+
+Wrzuciłem wszystko. Reszta utoworzona w ten sposób:
 
 ng new nazwa_aplikacji
 
@@ -9,6 +11,8 @@ ng new nazwa_aplikacji
 cd nazwa_aplikacji
 
 ng serve )
+
+--------------------
 
 Żeby korzystać z bootstrapa zrobiłem tak:
 
@@ -25,6 +29,8 @@ Po czym w katalogu aplikacji:
 ng build
 
 (Tego ostatniego nie kumam, ale inaczej bootstrap za cholerę nie chciał działać)
+
+--------------------
 
 Uruchomienie "fake-server" - json.server (https://github.com/typicode/json-server)
 
